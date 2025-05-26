@@ -1,7 +1,12 @@
-# python-boto3
+# Python-boto3
 Repo for the Udemy course: Python Programming for AWS
 
 To start localstack docker container:
-    1. start docker desktop
-    2. cd to python-bot3/boto3
-    3. run docker compose up -d
+
+1. Start Docker Desktop
+2. Change directory to `python-boto3/boto3`
+3. Run the following command:
+
+   ```bash
+   docker compose up -d
+   ```
