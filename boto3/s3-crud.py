@@ -15,6 +15,7 @@ bucket_name = 'dct-crud-1'
 
 # Check if the bucket exists and create if does NOT exist.
 all_my_buckets = [bucket.name for bucket in s3.buckets.all()]
+
 if bucket_name not in all_my_buckets:
     print(f"'{bucket_name}' does not exist. Creating now...")
     s3.create_bucket(Bucket=bucket_name)
