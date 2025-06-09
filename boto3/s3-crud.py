@@ -23,3 +23,31 @@ if bucket_name not in all_my_buckets:
 else:
     print(f"'{bucket_name}' already exists.")
 
+# Create 'file_1' and 'file_2'
+file_1 = 'file_1.txt'
+file_2 = 'file_2.txt'
+
+# Upload 'file_1' and 'file_2' to the new bucket
+s3.Bucket(bucket_name).upload_file(Filename=file_1,Key=file_1)
+
+# Get bucket objects
+for obj in s3.Bucket(bucket_name).objects.all():
+    print(obj.key)
+
+# Read and print the file from the bucket
+obj = s3.Object(bucket_name, file_1)
+body = obj.get()['Body'].read()
+print(body)
+
+# Update file_1 contents with file_contents and print the body
+s3.Object(bucket_name, file_1).put(Body=open(file_2, 'rb'))
+obj = s3.Object(bucket_name, file_1)
+body = obj.get()['Body'].read()
+print(body)
+
+#Delete the file from the bucket
+s3.Object(bucket_name, file_1).delete()
+
+# Delete the bucket
+bucket = s3.Bucket(bucket_name)
+bucket.delete()
