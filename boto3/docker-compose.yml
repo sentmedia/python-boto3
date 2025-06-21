@@ -5,7 +5,8 @@ services:
     ports:
       - "4566:4566"  # Edge port for all services
     environment:
-      - SERVICES=s3
+      - SERVICES=s3,ec2,iam,lambda,dynamodb,vpc # Specify the services you want to run
+      - DEFAULT_REGION=us-east-1
       - DEBUG=1
     volumes:
       - ./localstack:/var/lib/localstack
