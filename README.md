@@ -2,10 +2,11 @@
 Repo for the Udemy course: Python Programming for AWS
 
 I'm using localstack for this course to emulate an AWS environment.
-checkout the [boto3/docker-compose.yaml](https://github.com/sentmedia/python-boto3/blob/main/boto3/docker-compose.yml) for details on how I'm bringing up localstack.
+checkout the [boto3/docker-compose.yaml](https://github.com/sentmedia/python-boto3/blob/main/boto3/docker-compose.yml) for details on which services are being emulated.
 
 To create and setup python venv:
- `cd boto3`
+ 1. `cd boto3`
+ 2. Run the below command:
    ```
    python -m venv ./env  
    source ./env/bin/activate 
@@ -15,7 +16,7 @@ To create and setup python venv:
 To start localstack docker container:
 
 1. Start Docker Desktop
-2. Change directory to `python-boto3/boto3`
+2. `cd boto3`
 3. Run the following command:
 
    ```bash
